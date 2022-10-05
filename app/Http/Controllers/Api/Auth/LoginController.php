@@ -76,7 +76,7 @@ class LoginController extends Controller
         Auth::login($user);
 
         return $this->success([
-            'token' => $user->createToken('api')->toArray(),
+            'token' => $user->createToken('api')->accessToken,
             'user'  => Auth::user()
         ]);
     }
@@ -113,7 +113,7 @@ class LoginController extends Controller
     public function logout(Request $request): JsonResponse
     {
         if (!$this->api_guard()->check()) {
-            return $this->error([__('auth.logout-error')]);
+            return $this->error(__('auth.logout-error'));
         }
 
         $request->user('api')->token()->revoke();

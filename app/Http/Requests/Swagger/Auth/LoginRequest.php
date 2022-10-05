@@ -11,29 +11,29 @@ namespace App\Http\Requests\Swagger\Auth;
  * @OA\Schema(
  *      title="LoginRequest",
  *      type="object",
- *      required={"email", "password"}
+ *      required={"login", "password"}
  * )
  */
 class LoginRequest
 {
     /**
      * @OA\Property(
-     *      title="email",
-     *      description="Email",
-     *      example="admin@admin.com",
-     *      minLength=5,
-     *      maxLength=255,
+     *      title="login",
+     *      description="Login",
+     *      example="userSurnameuse",
+     *      minLength=7,
+     *      maxLength=300,
      * )
      *
      * @var string
      */
-    public $email;
+    public $login;
 
     /**
      * @OA\Property(
      *      title="passsword",
      *      description="Password",
-     *      example="adminadmin",
+     *      example="useruser",
      *      minLength=8,
      *      maxLength=255,
      * )

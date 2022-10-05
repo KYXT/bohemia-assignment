@@ -26,7 +26,7 @@ class RegisterController extends Controller
      *     operationId="register",
      *     tags={"Auth"},
      *     summary="Registration",
-     *     description="Registration by email and password",
+     *     description="Registration user",
      *     @OA\RequestBody(
      *          required=true,
      *          @OA\JsonContent(ref="#/components/schemas/RegisterRequest")
