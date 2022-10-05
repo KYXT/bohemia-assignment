@@ -11,7 +11,16 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    
+    /**
+     * @var array
+     */
+    public const ROLES = [
+        1   => 'User',
+        2   => 'Moderator',
+        3   => 'Admin'
+    ];
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -19,8 +28,17 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
+        'nickname',
+        'phone',
         'email',
+        'address',
+        'city',
+        'state',
+        'zip',
+        'login',
         'password',
+        'role', // 1- user, 2- moderator, 3- admin, 4- creator
     ];
 
     /**
@@ -41,4 +59,36 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    /**
+     * @return string
+     */
+    public function getRole(): string
+    {
+        return self::ROLES[$this->role];
+    }
+    
+    /**
+     * @return bool
+     */
+    public function isUser(): bool
+    {
+        return $this->role == 1;
+    }
+    
+    /**
+     * @return bool
+     */
+    public function isModerator(): bool
+    {
+        return $this->role == 2;
+    }
+    
+    /**
+     * @return bool
+     */
+    public function isAdmin(): bool
+    {
+        return $this->role == 3;
+    }
 }
