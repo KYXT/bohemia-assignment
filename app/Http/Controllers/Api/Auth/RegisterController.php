@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Helpers\LoginHelper;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -54,13 +55,14 @@ class RegisterController extends Controller
         $data = $request->validated();
 
         $data['password'] = Hash::make($data['password']);
-
+        $data['login'] = LoginHelper::createLogin($data['surname'], $data['name']);
+        
         $user = User::create($data);
 
         return $this->success([
-            'message' => __('auth.registration'),
-            'token' => $user->createToken('api')->accessToken,
-            'user' => $user
+            'message'   => __('auth.registration'),
+            'token'     => $user->createToken('api')->accessToken,
+            'user'      => $user
         ]);
     }
 }

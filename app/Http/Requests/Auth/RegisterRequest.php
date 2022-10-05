@@ -25,7 +25,14 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name'      => 'required|string|min:3|max:255',
-            'email'     => 'required|email|min:5|max:255|unique:users,email',
+            'surname'   => 'required|string|min:3|max:255',
+            'nickname'  => 'required|string|min:3|max:100',
+            'phone'     => 'required|numeric|digits_between:6,20',
+            'email'     => 'required|email|min:6|max:255|unique:users,email',
+            'address'   => 'required|string|min:5|max:100',
+            'city'      => 'required|string|min:3|max:50',
+            'state'     => 'required|string|min:2|max:50',
+            'zip'       => 'required|string|min:3|max:10',
             'password'  => 'required|string|min:8|max:255'
         ];
     }
