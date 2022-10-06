@@ -6,6 +6,97 @@
 	},
 	"item": [
 		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Posts",
+					"item": [
+						{
+							"name": "Create post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGUyNmYyZmYzMjVjMzJhMDZkNjMyODBiMTY1ODQzOGZlODBkN2QzZTJiY2M0OGIyYjA1N2JhM2ZlNGIyNzg4ODY4ZTczZDk4MzgyMGQwZmQiLCJpYXQiOjE2NjUwOTcwNDguNjkxMzY3LCJuYmYiOjE2NjUwOTcwNDguNjkxMzY4LCJleHAiOjE2OTY2MzMwNDguNjg5ODU2LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.MJ7nfb3kOUU2DgKiECpfahQUbrHMqet00IEvPQ9lFPP1BUHcPo5Bg0Xsn8LK2MU0ykM7AfG8398AOGz2JznyRhIU_cqK1RRFycovaBgzU5AfdDbf-O3TcW1csyb2P_-3rXDCe3BcUjyE1DY6yRd-XyhfscVaI0wOiS4o1e8e_0Xvpir2WyWCtbIhI9OuT7-Ri69Sy4-igkpRn5FiZSjsvEDqHnbnpHQu7TUKyRMEss-YIQ8XM2GVSsL6-NEqbcOfRRSt_rfE8-7GMKjmHYhT3mula-9gwvlkvxngrJ1PQFYMcymI7OcYZuhwbC47frpPtuv7nDTjv1q3B7Jb8vGSo7fIn_AqJz7hiC6H-U0ynqz-p2Z34yYWEk--CGdKtdr5WB3FxV2jhcLRCHBMpTpWGbLwLkT1RvZypmMW9yKIjS6BxcNN8m4BCXo7E2SAjd1v_dfvftLbRsYnVH83AJqmJxbEtxKVN9RIh87MBuHyvZhrKlqhpn1zPUgYkCAt6v3kTxTof-Xl6X6TG0KzUcV4iQJHCE6Y0GflAxt8fwEDh39ii_X_TeQGgekjXNoSfMPiE0wI8tjTH20o57m2bJ86BTC4KsrvCkGyH6XdRrLs7aDtEq4owjDGeC1C4AVvHmm482JSxZFredUTJdzqm4LfL1nqyEtTTTb7CLy7OFZ1mY4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/admin/posts/store?title=my blog post title&h1=my blog post h1&content=my blog postmy blog postmy blog postmy blog postmy blog postmy blog post&description=description description description description description description &keywords=keyword, keyword, keyword, keyword, keyword, keyword, ",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"admin",
+										"posts",
+										"store"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "my blog post title"
+										},
+										{
+											"key": "h1",
+											"value": "my blog post h1"
+										},
+										{
+											"key": "content",
+											"value": "my blog postmy blog postmy blog postmy blog postmy blog postmy blog post"
+										},
+										{
+											"key": "description",
+											"value": "description description description description description description "
+										},
+										{
+											"key": "keywords",
+											"value": "keyword, keyword, keyword, keyword, keyword, keyword, "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGUyNmYyZmYzMjVjMzJhMDZkNjMyODBiMTY1ODQzOGZlODBkN2QzZTJiY2M0OGIyYjA1N2JhM2ZlNGIyNzg4ODY4ZTczZDk4MzgyMGQwZmQiLCJpYXQiOjE2NjUwOTcwNDguNjkxMzY3LCJuYmYiOjE2NjUwOTcwNDguNjkxMzY4LCJleHAiOjE2OTY2MzMwNDguNjg5ODU2LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.MJ7nfb3kOUU2DgKiECpfahQUbrHMqet00IEvPQ9lFPP1BUHcPo5Bg0Xsn8LK2MU0ykM7AfG8398AOGz2JznyRhIU_cqK1RRFycovaBgzU5AfdDbf-O3TcW1csyb2P_-3rXDCe3BcUjyE1DY6yRd-XyhfscVaI0wOiS4o1e8e_0Xvpir2WyWCtbIhI9OuT7-Ri69Sy4-igkpRn5FiZSjsvEDqHnbnpHQu7TUKyRMEss-YIQ8XM2GVSsL6-NEqbcOfRRSt_rfE8-7GMKjmHYhT3mula-9gwvlkvxngrJ1PQFYMcymI7OcYZuhwbC47frpPtuv7nDTjv1q3B7Jb8vGSo7fIn_AqJz7hiC6H-U0ynqz-p2Z34yYWEk--CGdKtdr5WB3FxV2jhcLRCHBMpTpWGbLwLkT1RvZypmMW9yKIjS6BxcNN8m4BCXo7E2SAjd1v_dfvftLbRsYnVH83AJqmJxbEtxKVN9RIh87MBuHyvZhrKlqhpn1zPUgYkCAt6v3kTxTof-Xl6X6TG0KzUcV4iQJHCE6Y0GflAxt8fwEDh39ii_X_TeQGgekjXNoSfMPiE0wI8tjTH20o57m2bJ86BTC4KsrvCkGyH6XdRrLs7aDtEq4owjDGeC1C4AVvHmm482JSxZFredUTJdzqm4LfL1nqyEtTTTb7CLy7OFZ1mY4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/admin/posts/delete/my-blog-post-title",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"admin",
+										"posts",
+										"delete",
+										"my-blog-post-title"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Login",
 			"request": {
 				"method": "POST",
