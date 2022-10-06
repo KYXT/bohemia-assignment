@@ -16,11 +16,13 @@ class LoginHelper
         $login = $surname . substr($name, 0, 3);
 
         $count = 0;
-        while (self::isLoginExists($login)) {
-            $login = $login . '_' . ++$count;
+        $newLogin = $login;
+        while (self::isLoginExists($newLogin)) {
+            $count++;
+            $newLogin = $login . '_' . $count;
         }
 
-        return $login;
+        return $newLogin == $login ? $login : $newLogin;
     }
     
     /**
