@@ -3,7 +3,7 @@
 This Laravel app is created by Pavel Zayats for Bohemia Interactive assignment
 ### How to run the API
 
-Make sure you have PHP and Composer installed globally on your computer.
+Make sure you have PHP (^7.3|^8.0) and Composer installed globally on your computer.
 
 Clone the repo and enter the project folder
 
@@ -18,9 +18,12 @@ Install the app
 cp .env.example .env
 composer install
 php artisan key:generate
+php artisan l5-swagger:generate
+php artisan migrate
+php artisan passport:install
 ```
 
-Run the web server
+Configure your .env file, after that run the web server
 
 ```
 php artisan serve
