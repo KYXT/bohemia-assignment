@@ -4,7 +4,7 @@
 namespace App\Http\Requests\Swagger\Auth;
 
 /**
- * Class RegisterRequest
+ * Class LoginRequest
  *
  * @package App\Http\Requests\Swagger\Auth
  *
