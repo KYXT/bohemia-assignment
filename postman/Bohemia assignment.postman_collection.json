@@ -93,6 +93,100 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "Delete comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjJiMDRlNjJiN2VlOTlmNmNhNTViMGY4MDdiOWMyZTJmOTVhZjYyNjk1OTBkODlhZjRmMWE4OGY1YTUzZWExODg1N2U5OWE5ZTM0OWIzZjYiLCJpYXQiOjE2NjUyNjc4NzUuMTU0NTUyLCJuYmYiOjE2NjUyNjc4NzUuMTU0NTUzLCJleHAiOjE2OTY4MDM4NzUuMTUyODQsInN1YiI6IjMiLCJzY29wZXMiOltdfQ.fz6N7V1iVp1l7HsHJvn0dvgi2WAHX1InszbC7UJCQUK10cqfQEH8lmi3vEcwD90jXkBhHInN0etSujhmo3GCFEhuJuthPORPw21J7WfbRPRUWxSmwhUjKrIQgNOxJrZ3Q5exuyQZ89CQlVIvV_YtksBm7aJdLyCukVP-cDp_KnE9DrhAgeE1DyxXJoH3jZoO2q89K_GQykvoMPCYmo0UogiGj2uecQ5BOib64R8wewDiZ2HCmRnfMPWOIPm0lqY24u_vL6Hzf4V0E5JjWfrRKlCBVp0mZ7EMv7bJzmKI2Vh33T0kDwN4LPCNFseRJktdaV-Pl-UmRRfXHxguueK71g26CmD_7Yz5HYPMMYgxss0Pxe22UmbO4Ku6LHnWKwofJoFgQ5DuKk9ItwFem28wNxAm79yPED-XVPeKaT62YCoAgZsQrNMGCwV253Pmmc78zKQ8B9faSU65bDP-ohC9d0ZxeTpIMt3sGnOWhvy4jgbT6ldSmIpeILZz5Si7WYxiEF3jYyvsljGZ1_98rK2NT0hwPPqCcodpJ3cDMLpzIV5pkVzjNQUcG-ccW9siSnVOeK3Lxm5QXwiAUEA-075Xv-vHT0rWCZdbghAiSaKL2QVc1BKACqxBWgUYZmvAa7bQm0mWoHl2y4w-v5s_4TzUxqjTWPwLBl9X_xlvxNt-1wM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/admin/post-comments/delete/1",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"admin",
+										"post-comments",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "Create comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWQ5ZTllMzA4ZmU4NDE3NjMwYmQ2MTg5ZmU0NDI0NWJjYTJlNzYyYTNmNjdlMjE0YzFhNGZkZWRjNzBhZGIyYzk1Mjc5MTQ2ZDUzODhlZGEiLCJpYXQiOjE2NjUyNjMzMTUuNzAzMDExLCJuYmYiOjE2NjUyNjMzMTUuNzAzMDEyLCJleHAiOjE2OTY3OTkzMTUuNzAwNzU1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.IfvOlNeiVvSAO839P13KBIVRhLUqrhxod5J_YWNTocpIK23NKYfkzZbE7nEj3TG4nXLeRYG4Ann81_COuek26sIVRPpOlr4-wWekzJYbbFJMRlHCFLS7c7Nb7AI6_2FqQ8HEo5A_DL42DoM_ZWUU6D6YlZHbGm3Gbh0CAcZ0C8ba8oeAtqZz3szx-W70QUnLL7Z00x-ohX6nB4dKVeNrUzYiFRn6EwzgDz-V63QAZcopVBXwBTPyWYxBfENp9eQoPTYtNCGYV5y8WLjLEk96Oy8l-q4Cd2TwzAeVFCXpKTRTsZQiJcagkhQgd9X8CJKFPfBuZtJe2J4lTe4jqpQP6KcbWiIFVsJuOrYerHuzQ5n3ENBxAaAOx7SgAdeRE_YItA29Fdf4URu8Kq6jKvhNGH4XN7uXKtHbdOOhL78KMeU7c2ZNucHk3wH8iLtwFiYU__lZgswubbQyEwqQu-3w9tuIGjE69KuL8PQZ06KFe7F51-W0iceYt75RM4ZoFVTLcsM1S-vC5DgoMwjji0R_fKwHqp4GmrZGzx69E8dV-0k_N1n2HDlEH7ffomE8GmGzkx_z4QKGH6BZ__R3pd4beeuFyE2xfvV4jaOvlOR2fFo5i7-IrmLtTeCv0KtWXpLk4stSmAdM_Nv4RUFjFxHFS2pWKDe2mmSAIlIQiK7mrC4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/user/post-comments/store/4?text=My comment&reply_id=1",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"user",
+										"post-comments",
+										"store",
+										"4"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "My comment"
+										},
+										{
+											"key": "reply_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get my user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
 				}
 			]
 		},
