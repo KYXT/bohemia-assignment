@@ -70,6 +70,7 @@ $api->version('v1', function ($api) {
                                     'middleware' => 'admin',
                                 ],
                                 function ($api) {
+                                    $api->post('restore/{slug}', 'PostController@restore');
                                     $api->delete('delete/{slug}', 'PostController@delete');
                                 }
                             );
@@ -83,6 +84,7 @@ $api->version('v1', function ($api) {
                             'prefix'        => 'post-comments',
                         ],
                         function ($api) {
+                            $api->post('restore/{id}', 'PostCommentController@restore');
                             $api->delete('delete/{id}', 'PostCommentController@delete');
                         }
                     );

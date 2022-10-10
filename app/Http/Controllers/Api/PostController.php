@@ -85,7 +85,8 @@ class PostController extends Controller
             'reply_id'      => null,
             'is_in_trash'   => false
         ])
-            ->with('replies', 'user:id,name,email,nickname,role')
+            ->with('repliesNotInTrash')
+            ->with('user:id,name,email,nickname,role')
             ->orderBy('created_at')
             ->paginate(10);
     

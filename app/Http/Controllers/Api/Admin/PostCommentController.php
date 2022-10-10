@@ -9,6 +9,59 @@ use Illuminate\Http\JsonResponse;
 class PostCommentController extends Controller
 {
     /**
+     * Restore post comment
+     *
+     * @OA\Post(
+     *     path="/user/post-comments/restore/{id}",
+     *     tags={"Admin-Post-Comments"},
+     *     summary="Restore post comment",
+     *     description="Restore post comment by id",
+     *     security={
+     *          {"bearer": {}}
+     *     },
+     *     @OA\Parameter(
+     *          name="id",
+     *          description="Comment Id",
+     *          required=true,
+     *          in="path",
+     *          example="123",
+     *          @OA\Schema(
+     *              type="int"
+     *          )
+     *     ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="message", type="string", example="Successfully removed from trash bin")
+     *          )
+     *      )
+     * )
+     *
+     * @param $id
+     * @return JsonResponse
+     */
+    public function restore($id)
+    {
+        $postComment = PostComment::where([
+            'id'            => $id,
+            'is_in_trash'   => true
+        ])
+            ->first();
+        
+        if (!$postComment) {
+            return $this->error(__('errors.not-founded'));
+        }
+    
+        $postComment->is_in_trash = false;
+        $postComment->save();
+        
+        return $this->success([
+            'message' => __('success.removed_from_trash')
+        ]);
+    }
+    
+    /**
      * Delete post comment
      *
      * @OA\Delete(
@@ -33,7 +86,7 @@ class PostCommentController extends Controller
      *          response=200,
      *          description="Successful operation",
      *          @OA\JsonContent(
-     *              @OA\Property(property="message", type="string", example="Successfully created")
+     *              @OA\Property(property="message", type="string", example="Successfully deleted")
      *          )
      *      )
      * )
@@ -54,9 +107,6 @@ class PostCommentController extends Controller
         if (!$postComment->is_in_trash) {
             $postComment->is_in_trash = true;
             $postComment->save();
-    
-            PostComment::whereIn('id', $postComment->replies()->pluck('id')->toArray())
-                ->update(['is_in_trash' => true]);
     
             return $this->success([
                 'message' => __('success.moved_to_trash'),
