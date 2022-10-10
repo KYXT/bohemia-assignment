@@ -75,7 +75,7 @@
 										}
 									]
 								},
-								"method": "POST",
+								"method": "DELETE",
 								"header": [],
 								"url": {
 									"raw": "{{local_url}}/admin/posts/delete/my-blog-post-title",
@@ -185,6 +185,46 @@
 						"method": "GET",
 						"header": [],
 						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/posts",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/posts/my-blog-post-title",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"posts",
+								"my-blog-post-title"
+							]
+						}
 					},
 					"response": []
 				}

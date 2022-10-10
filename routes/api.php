@@ -17,6 +17,16 @@ $api->version('v1', function ($api) {
             $api->post('logout', 'LoginController@logout');
         });
     
+        $api->group(
+            [
+                'prefix' => 'posts'
+            ],
+            function ($api) {
+                $api->get('', 'PostController@index');
+                $api->get('{id}', 'PostController@show');
+            }
+        );
+    
         $api->group(['middleware' => 'auth:api'], function ($api) {
     
             $api->group(
@@ -60,7 +70,7 @@ $api->version('v1', function ($api) {
                                     'middleware' => 'admin',
                                 ],
                                 function ($api) {
-                                    $api->post('delete/{slug}', 'PostController@delete');
+                                    $api->delete('delete/{slug}', 'PostController@delete');
                                 }
                             );
                         }
