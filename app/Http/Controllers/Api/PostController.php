@@ -46,8 +46,8 @@ class PostController extends Controller
      *     path="/posts/{slug}",
      
      *     tags={"Posts"},
-     *     summary="Get all posts",
-     *     description="Return all posts, paginated by 10",
+     *     summary="Get post by slug",
+     *     description="Return post by slug, with comments paginated by 10",
      *     @OA\Parameter(
      *          name="slug",
      *          description="Post's  slug",
@@ -87,7 +87,7 @@ class PostController extends Controller
         ])
             ->with('replies', 'user:id,name,email,nickname,role')
             ->orderBy('created_at')
-            ->paginate(12);
+            ->paginate(10);
     
         return $this->success([
             'post'          => $post,
