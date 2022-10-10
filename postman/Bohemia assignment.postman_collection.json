@@ -91,6 +91,36 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Restore post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGUyNmYyZmYzMjVjMzJhMDZkNjMyODBiMTY1ODQzOGZlODBkN2QzZTJiY2M0OGIyYjA1N2JhM2ZlNGIyNzg4ODY4ZTczZDk4MzgyMGQwZmQiLCJpYXQiOjE2NjUwOTcwNDguNjkxMzY3LCJuYmYiOjE2NjUwOTcwNDguNjkxMzY4LCJleHAiOjE2OTY2MzMwNDguNjg5ODU2LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.MJ7nfb3kOUU2DgKiECpfahQUbrHMqet00IEvPQ9lFPP1BUHcPo5Bg0Xsn8LK2MU0ykM7AfG8398AOGz2JznyRhIU_cqK1RRFycovaBgzU5AfdDbf-O3TcW1csyb2P_-3rXDCe3BcUjyE1DY6yRd-XyhfscVaI0wOiS4o1e8e_0Xvpir2WyWCtbIhI9OuT7-Ri69Sy4-igkpRn5FiZSjsvEDqHnbnpHQu7TUKyRMEss-YIQ8XM2GVSsL6-NEqbcOfRRSt_rfE8-7GMKjmHYhT3mula-9gwvlkvxngrJ1PQFYMcymI7OcYZuhwbC47frpPtuv7nDTjv1q3B7Jb8vGSo7fIn_AqJz7hiC6H-U0ynqz-p2Z34yYWEk--CGdKtdr5WB3FxV2jhcLRCHBMpTpWGbLwLkT1RvZypmMW9yKIjS6BxcNN8m4BCXo7E2SAjd1v_dfvftLbRsYnVH83AJqmJxbEtxKVN9RIh87MBuHyvZhrKlqhpn1zPUgYkCAt6v3kTxTof-Xl6X6TG0KzUcV4iQJHCE6Y0GflAxt8fwEDh39ii_X_TeQGgekjXNoSfMPiE0wI8tjTH20o57m2bJ86BTC4KsrvCkGyH6XdRrLs7aDtEq4owjDGeC1C4AVvHmm482JSxZFredUTJdzqm4LfL1nqyEtTTTb7CLy7OFZ1mY4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/admin/posts/restore/my-blog-post-title2",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"admin",
+										"posts",
+										"restore",
+										"my-blog-post-title2"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -121,6 +151,36 @@
 										"admin",
 										"post-comments",
 										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restore comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjJiMDRlNjJiN2VlOTlmNmNhNTViMGY4MDdiOWMyZTJmOTVhZjYyNjk1OTBkODlhZjRmMWE4OGY1YTUzZWExODg1N2U5OWE5ZTM0OWIzZjYiLCJpYXQiOjE2NjUyNjc4NzUuMTU0NTUyLCJuYmYiOjE2NjUyNjc4NzUuMTU0NTUzLCJleHAiOjE2OTY4MDM4NzUuMTUyODQsInN1YiI6IjMiLCJzY29wZXMiOltdfQ.fz6N7V1iVp1l7HsHJvn0dvgi2WAHX1InszbC7UJCQUK10cqfQEH8lmi3vEcwD90jXkBhHInN0etSujhmo3GCFEhuJuthPORPw21J7WfbRPRUWxSmwhUjKrIQgNOxJrZ3Q5exuyQZ89CQlVIvV_YtksBm7aJdLyCukVP-cDp_KnE9DrhAgeE1DyxXJoH3jZoO2q89K_GQykvoMPCYmo0UogiGj2uecQ5BOib64R8wewDiZ2HCmRnfMPWOIPm0lqY24u_vL6Hzf4V0E5JjWfrRKlCBVp0mZ7EMv7bJzmKI2Vh33T0kDwN4LPCNFseRJktdaV-Pl-UmRRfXHxguueK71g26CmD_7Yz5HYPMMYgxss0Pxe22UmbO4Ku6LHnWKwofJoFgQ5DuKk9ItwFem28wNxAm79yPED-XVPeKaT62YCoAgZsQrNMGCwV253Pmmc78zKQ8B9faSU65bDP-ohC9d0ZxeTpIMt3sGnOWhvy4jgbT6ldSmIpeILZz5Si7WYxiEF3jYyvsljGZ1_98rK2NT0hwPPqCcodpJ3cDMLpzIV5pkVzjNQUcG-ccW9siSnVOeK3Lxm5QXwiAUEA-075Xv-vHT0rWCZdbghAiSaKL2QVc1BKACqxBWgUYZmvAa7bQm0mWoHl2y4w-v5s_4TzUxqjTWPwLBl9X_xlvxNt-1wM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/admin/post-comments/restore/1",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"admin",
+										"post-comments",
+										"restore",
 										"1"
 									]
 								}
@@ -211,18 +271,18 @@
 					"response": []
 				},
 				{
-					"name": "Get post by id",
+					"name": "Get post by slug",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{local_url}}/posts/my-blog-post-title",
+							"raw": "{{local_url}}/posts/my-blog-post-title2",
 							"host": [
 								"{{local_url}}"
 							],
 							"path": [
 								"posts",
-								"my-blog-post-title"
+								"my-blog-post-title2"
 							]
 						}
 					},

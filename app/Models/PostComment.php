@@ -41,4 +41,14 @@ class PostComment extends Model
     {
         return $this->reply()->with('replies', 'user:id,name,email,role');
     }
+    
+    public function replyNotInTrash()
+    {
+        return $this->hasMany(PostComment::class, 'reply_id', 'id')->where('is_in_trash', false);
+    }
+    
+    public function repliesNotInTrash()
+    {
+        return $this->replyNotInTrash()->with('repliesNotInTrash', 'user:id,name,email,role');
+    }
 }

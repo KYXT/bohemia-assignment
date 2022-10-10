@@ -54,6 +54,64 @@ class PostController extends Controller
             'post' => $post
         ]);
     }
+    
+    /**
+     * Restore post
+     *
+     * @OA\Post(
+     *     path="/admin/posts/restore/{slug}",
+     *     tags={"Admin-Posts"},
+     *     summary="Restre post by slug",
+     *     description="Restore post. Only for admins.",
+     *     security={
+     *          {"bearer": {}}
+     *     },
+     *     @OA\Parameter(
+     *          name="slug",
+     *          description="Posts slug",
+     *          required=true,
+     *          in="path",
+     *          example="my-post-slug",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *     ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="message", type="string", example="Successfully removed from trash bin")
+     *          )
+     *      ),
+     *     @OA\Response(
+     *          response=500,
+     *          description="Item not founded",
+     *          @OA\JsonContent(example="Item not founded")
+     *      ),
+     * )
+     *
+     * @param $slug
+     * @return JsonResponse
+     */
+    public function restore($slug)
+    {
+        $post = Post::where([
+            'slug'          => $slug,
+            'is_in_trash'   => true
+        ])
+            ->first();
+    
+        if (!$post) {
+            return $this->error(__('errors.not-founded'));
+        }
+    
+        $post->is_in_trash = false;
+        $post->save();
+    
+        return $this->success([
+            'message' => __('success.removed_from_trash')
+        ]);
+    }
 
     /**
      * Delete post
@@ -94,7 +152,6 @@ class PostController extends Controller
      * @param $slug
      * @return JsonResponse
      */
-    
     public function delete($slug)
     {
         $post = Post::where('slug', $slug)
@@ -108,9 +165,6 @@ class PostController extends Controller
             
             $post->is_in_trash = true;
             $post->save();
-    
-            PostComment::whereIn('id', $post->comments->pluck('id')->toArray())
-                ->update(['is_in_trash' => true]);
     
             return $this->success([
                 'message' => __('success.moved_to_trash')
