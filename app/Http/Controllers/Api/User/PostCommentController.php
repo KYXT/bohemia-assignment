@@ -72,7 +72,7 @@ class PostCommentController extends Controller
             }
             
             if ($repliedMessage['post_id'] != $postId) {
-                return $this->error(__('forum.reply-error'));
+                return $this->error(__('errors.reply-error'));
             }
         }
         
