@@ -242,9 +242,27 @@
 				{
 					"name": "Get my user",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGRhY2E1MjAxZWNkMzU3ZWIzZjRlNjM1YTI5YzEyMTNjNDE0Y2QzMWJhNGIwMDNkZWMzMWI2ODYxZWI5YTU3MWYyOGMwMDBjYzM3NzcxYjciLCJpYXQiOjE2NjU0MzY5OTMuMzEwNjYsIm5iZiI6MTY2NTQzNjk5My4zMTA2NjIsImV4cCI6MTY5Njk3Mjk5My4zMDkwOTcsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.dE_BCi9CmWbEGhx8IINcKgkliwUFO_vIlVNCIjv1xH0yDcymrruSAbac53gBEhPRZzoMPMqz-OgZkO4e6PkWfknjpW49umfT-YSySkitosxW8bWek5j6r8H4-th8XiS_f0xpcC1aCBi5bd88l2Taw3nvGoifyNboeEcRTVJCzGCEzRHOV-IdOCsemNrfpntmSd-4X4L21whAr5DhEOhT8l7uCH8OEso7GTDoyTZjUDkAb-8WBU_Q1lXDBKtKoDHWCA4EhsYFHNQYVLDaFRE-GqvHyr7x3pa2rKPXjqu4QF6wYFxYSPgiDuNcNK1LcfFQdk2T9Tm4ylxhB3CHCTQQf0EfDBNbgBUkyrGAeZD7wdno-ShxjhpiPUkn4kGpiniY86EYZaA16kbczcFI3zjQfc0WeQ7T0XbPgW8mkhckGzXpACOmF7fFRvN-iLd8goINhGuAspsg_xBaqgGhwgDOVjtaKr_dOngTf2twxRLXoIzxVskEfTTYA15XqRFXKtUuSDTSoq_f4Z-Ykt5MFxc9oRL80Z1-Q9xyxYs9Gft3GxNh9e-So-eE00RgPC5V0NXrwyKFOGVJtQ_rPoLdCOEe8Xilfcx8SOWGLHBRRAmwcMtoCjvYerxGyfALE7o28I45fseT9Ny2RYo7eQFbv0faMmjqxjNT2qsAX5RAdIJFyA0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "{{local_url}}/user",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
 					},
 					"response": []
 				}
