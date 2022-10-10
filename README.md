@@ -75,3 +75,10 @@ modermoder
 adminSurnameadm
 adminadmin
 ```
+
+# Unit tests
+After installing an application, execute
+```
+php artisan test
+```
+command to run tests.
