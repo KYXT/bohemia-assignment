@@ -32,10 +32,9 @@ php artisan passport:install
 
 ### Start server
 
-Run the web server
+Run the local web server
 
 ```
-cp .env.example .env
 php artisan serve
 ```
 
