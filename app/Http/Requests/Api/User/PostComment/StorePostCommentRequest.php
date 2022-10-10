@@ -24,7 +24,7 @@ class StorePostCommentRequest extends FormRequest
     public function rules()
     {
         return [
-            'text'      => 'required|string|min:3|max:2000',
+            'text'      => 'required|string|min:3|max:255',
             'reply_id'  => 'nullable|integer|exists:post_comments,id',
         ];
     }
