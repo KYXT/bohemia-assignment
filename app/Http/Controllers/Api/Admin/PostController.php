@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Helpers\UrlGeneratorHelper;
 use App\Http\Requests\Api\Admin\Posts\StorePostRequest;
 use App\Models\Post;
+use App\Models\PostComment;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,7 +58,7 @@ class PostController extends Controller
     /**
      * Delete post
      *
-     * @OA\Post(
+     * @OA\Delete(
      *     path="/admin/posts/delete/{slug}",
      *     operationId="delete post",
      *     tags={"Admin-Posts"},
@@ -108,11 +109,15 @@ class PostController extends Controller
             $post->is_in_trash = true;
             $post->save();
     
+            PostComment::whereIn('id', $post->comments->pluck('id')->toArray())
+                ->update(['is_in_trash' => true]);
+    
             return $this->success([
                 'message' => __('success.moved_to_trash')
             ]);
         }
     
+        $post->comments()->delete();
         $post->delete();
     
         return $this->success([
