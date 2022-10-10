@@ -34,7 +34,6 @@ class UserSeeder extends Seeder
                 'role'      => 2
             ]);
         
-        echo "Ok.\n";
     
         User::factory()
             ->create([
@@ -44,5 +43,7 @@ class UserSeeder extends Seeder
                 'password'  => Hash::make('adminadmin'),
                 'role'      => 3
             ]);
+    
+        echo "Ok.\n";
     }
 }
